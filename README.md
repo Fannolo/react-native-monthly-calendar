@@ -1,3 +1,4 @@
+<h1 align="center">Welcome to react-native-monthly-calendar 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://pippo-expo.com" target="_blank">
@@ -6,12 +7,9 @@
   <a href="https://github.com/Fannolo/react-native-monthly-calendar/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
-  <a href="https://twitter.com/teomazzio" target="_blank">
-    <img alt="Twitter: teomazzio" src="https://img.shields.io/twitter/follow/teomazzio.svg?style=social" />
-  </a>
 </p>
 
-> <h1 align=&#34;center&#34;>Welcome to react-native-monthly-calendar 👋</h1>
+> <h3 align=&#34;center&#34;>This is a fantastic calendar for React Native that allows you to select months for years</h3>
 
 ### 🏠 [Homepage](https://www.npmjs.com/react-native-monthly-calendar)
 
@@ -38,7 +36,7 @@ npm run start
 - Twitter: [@fannolo](https://twitter.com/fannolo)
 - LinkedIn: [@fannolo](https://linkedin.com/in/fannolo/)
 
-👤 **Matteo Mazziotti**
+👤 **gitmazzio**
 
 - Website: https://matteomazziotti.it/
 - Github: [@gitmazzio](https://github.com/gitmazzio)

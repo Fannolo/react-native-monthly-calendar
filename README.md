@@ -1,4 +1,3 @@
-<h1 align="center">Welcome to react-native-monthly-calendar 👋</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://pippo-expo.com" target="_blank">
@@ -14,7 +13,7 @@
 
 > <h1 align=&#34;center&#34;>Welcome to react-native-monthly-calendar 👋</h1>
 
-### 🏠 [Homepage](_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_)
+### 🏠 [Homepage](https://www.npmjs.com/react-native-monthly-calendar)
 
 ### ✨ [Demo](https://pippo-expo.com)
 

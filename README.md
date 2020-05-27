@@ -43,7 +43,7 @@ npm run start
 
 👤 **lore93**
 
-- Github: [@gitmazzio](https://github.com/lore93)
+- Github: [@lore93](https://github.com/lore93)
 - LinkedIn: [@lorenzo-cunial](https://linkedin.com/in/lorenzo-cunial-669aa5146/)
 
 ## 🤝 Contributing

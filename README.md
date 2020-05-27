@@ -31,9 +31,7 @@ npm run start
 
 👤 **fannolo**
 
-- Website: fannolo
 - Github: [@fannolo](https://github.com/fannolo)
-- Twitter: [@fannolo](https://twitter.com/fannolo)
 - LinkedIn: [@fannolo](https://linkedin.com/in/fannolo/)
 
 👤 **gitmazzio**
@@ -43,10 +41,9 @@ npm run start
 - Twitter: [@teomazzio](https://twitter.com/teomazzio)
 - LinkedIn: [@matteomazziotti](http://linkedin.com/in/matteomazziotti)
 
-👤 **Lorenzo Cunial**
+👤 **lore93**
 
-- Github: [@gitmazzio](https://github.com/gitmazzio)
-- Twitter: [@teomazzio](https://twitter.com/teomazzio)
+- Github: [@gitmazzio](https://github.com/lore93)
 - LinkedIn: [@lorenzo-cunial](https://linkedin.com/in/lorenzo-cunial-669aa5146/)
 
 ## 🤝 Contributing

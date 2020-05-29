@@ -15,7 +15,7 @@ export class Calendar extends Component {
     this.calendarHeader.close();
   }
 
-  componentDidUpdate(
+  componentDidUpdate( 
     prevProps: Readonly<P>,
     prevState: Readonly<S>,
     snapshot: SS

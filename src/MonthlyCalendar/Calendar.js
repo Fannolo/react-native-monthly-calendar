@@ -15,14 +15,17 @@ export class Calendar extends Component {
     this.calendarHeader.close();
   }
 
-
-  componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS) {
-     if (prevProps.selectedDate!==this.props.selectedDate){
-       this.setState({
-         selectedMonth: moment(this.props.selectedDate, "YYYY-MM").format("MM"),
-         selectedYear: moment(this.props.selectedDate, "YYYY-MM").format("YYYY")
-       });
-     }
+  componentDidUpdate(
+    prevProps: Readonly<P>,
+    prevState: Readonly<S>,
+    snapshot: SS
+  ) {
+    if (prevProps.selectedDate !== this.props.selectedDate) {
+      this.setState({
+        selectedMonth: moment(this.props.selectedDate, "YYYY-MM").format("MM"),
+        selectedYear: moment(this.props.selectedDate, "YYYY-MM").format("YYYY"),
+      });
+    }
   }
 
   render() {

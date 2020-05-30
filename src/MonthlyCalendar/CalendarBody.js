@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { CalendarBodyYear } from "./CalendarBodyYear";
 import CalendarBodyMonths from "./CalendarBodyMonths";
-import { DimensionsUtils } from "../../../utils";
+//import { DimensionsUtils } from "../../../utils";
 import moment from "moment";
 import Carousel from "react-native-snap-carousel";
 
@@ -54,8 +54,8 @@ export default class CalendarBody extends Component {
             inactiveSlideOpacity={1}
             inactiveSlideScale={1}
             activeSlideAlignment={"center"}
-            sliderWidth={SCREEN_WIDTH - DimensionsUtils.getDP(64)}
-            itemWidth={SCREEN_WIDTH - DimensionsUtils.getDP(64)}
+            sliderWidth={SCREEN_WIDTH - 64}
+            itemWidth={SCREEN_WIDTH - 64}
             data={calendar}
             renderItem={(item) => this._renderItem.bind(this)(item)}
           />
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
   },
   carouselContainer: {
     alignItems: "center",
-    paddingVertical: DimensionsUtils.getDP(11),
+    paddingVertical: 11,
   },
 });
 

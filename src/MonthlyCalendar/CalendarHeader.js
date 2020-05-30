@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { StyleSheet, View, TouchableOpacity } from "react-native";
-import { DimensionsUtils } from "../../../utils";
-import colors from "../../../utils/Colors";
-import { H9 } from "../typhography/headlines";
+import { StyleSheet, TouchableOpacity, Text } from "react-native";
+//import { DimensionsUtils } from "../../../utils";
+//import { H9 } from "../typhography/headlines";
 import moment from "moment";
-import localization from "moment/locale/it";
-import CustomIcon from "../../Icons/CustomIcon";
+//import CustomIcon from "../../Icons/CustomIcon";
 
 export class CalendarHeader extends Component {
   state = {
@@ -39,14 +37,10 @@ export class CalendarHeader extends Component {
           },
         ]}
       >
-        <H9
-          bold
-          color={textColor}
-          text={`${moment(selectedMonth, "MM")
-            .format("MMMM")
-            .toUpperCase()} ${selectedYear}
-          `}
-        />
+        <Text bold color={textColor}>{`${moment(selectedMonth, "MM")
+          .format("MMMM")
+          .toUpperCase()} ${selectedYear}
+      `}</Text>
         <TouchableOpacity
           onPress={() => {
             this.setState({ open: !this.state.open }, () => {
@@ -55,11 +49,11 @@ export class CalendarHeader extends Component {
           }}
           style={[{ backgroundColor: backgroundColor }]}
         >
-          <CustomIcon
+          {/* <CustomIcon
             color={textColor}
             name={this.state.open ? "delete_search" : "calendar"}
             size={DimensionsUtils.getIconSize(24)}
-          />
+          /> */}
         </TouchableOpacity>
       </TouchableOpacity>
     );
@@ -68,9 +62,9 @@ export class CalendarHeader extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: DimensionsUtils.getDP(56),
+    height: 56,
     width: "100%",
-    padding: DimensionsUtils.getDP(16),
+    padding: 16,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { DimensionsUtils } from "../../../utils";
-import { Body_1 } from "../typhography/bodies";
-import colors from "../../../utils/Colors";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { DimensionsUtils } from "./Utils";
+//import { Body_1 } from "../typhography/bodies";
+//import colors from "../../../utils/Colors";
 
 export default class CalendarMonth extends Component {
   render() {

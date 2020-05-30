@@ -8,7 +8,7 @@ export default class CalendarMonth extends Component {
     return (
       <TouchableOpacity
         style={[
-          { backgroundColor: this.props.active ? "#fff" : null },
+          { backgroundColor: this.props.active ? "#000" : null },
           container,
         ]}
         disabled={!this.props.enabled}
@@ -16,7 +16,7 @@ export default class CalendarMonth extends Component {
       >
         <Body
           color={
-            this.props.active ? "#000" : this.props.enabled ? "#fff" : "#fff"
+            this.props.active ? "#fff" : this.props.enabled ? "#000" : "#000"
           }
           style={text}
           bold={this.props.active || this.props.enabled ? true : false}

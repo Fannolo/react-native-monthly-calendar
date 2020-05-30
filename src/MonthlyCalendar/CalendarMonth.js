@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import { DimensionsUtils } from "./Utils";
-//import { Body_1 } from "../typhography/bodies";
-//import colors from "../../../utils/Colors";
+import { StyleSheet, TouchableOpacity } from "react-native";
+import { DimensionsUtils, Body } from "./Utils";
 
 export default class CalendarMonth extends Component {
   render() {
@@ -10,19 +8,15 @@ export default class CalendarMonth extends Component {
     return (
       <TouchableOpacity
         style={[
-          { backgroundColor: this.props.active ? colors.white : null },
+          { backgroundColor: this.props.active ? "#fff" : null },
           container,
         ]}
         disabled={!this.props.enabled}
         onPress={this.props.onPress}
       >
-        <Body_1
+        <Body
           color={
-            this.props.active
-              ? colors.purple
-              : this.props.enabled
-              ? colors.white
-              : colors.whiteOpacity
+            this.props.active ? "#000" : this.props.enabled ? "#fff" : "#fff"
           }
           style={text}
           bold={this.props.active || this.props.enabled ? true : false}

@@ -3,7 +3,6 @@ import { FlatList, StyleSheet } from "react-native";
 import CalendarMonth from "./CalendarMonth";
 import moment from "moment";
 import localization from "moment/locale/it";
-//import { DimensionsUtils } from "../../../utils";
 
 export default class CalendarBodyMonths extends Component {
   render() {

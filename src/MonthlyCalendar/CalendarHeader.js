@@ -1,9 +1,7 @@
 import React, { Component } from "react";
-import { StyleSheet, TouchableOpacity, Text } from "react-native";
-//import { DimensionsUtils } from "../../../utils";
-//import { H9 } from "../typhography/headlines";
+import { StyleSheet, TouchableOpacity } from "react-native";
+import { DimensionsUtils, H9 } from "./Utils";
 import moment from "moment";
-//import CustomIcon from "../../Icons/CustomIcon";
 
 export class CalendarHeader extends Component {
   state = {
@@ -37,10 +35,14 @@ export class CalendarHeader extends Component {
           },
         ]}
       >
-        <Text bold color={textColor}>{`${moment(selectedMonth, "MM")
-          .format("MMMM")
-          .toUpperCase()} ${selectedYear}
-      `}</Text>
+        <H9
+          bold
+          color={textColor}
+          text={`${moment(selectedMonth, "MM")
+            .format("MMMM")
+            .toUpperCase()} ${selectedYear}
+          `}
+        />
         <TouchableOpacity
           onPress={() => {
             this.setState({ open: !this.state.open }, () => {
@@ -62,9 +64,9 @@ export class CalendarHeader extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    height: 56,
+    height: DimensionsUtils.getDP(56),
     width: "100%",
-    padding: 16,
+    padding: DimensionsUtils.getDP(16),
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",

@@ -3,7 +3,7 @@ import { CalendarHeader } from "./CalendarHeader";
 import CalendarBody from "./CalendarBody";
 import moment from "moment";
 
-export class Calendar extends Component {
+export default class Calendar extends Component {
   state = {
     showCalendar: false,
     selectedMonth: moment(this.props.selectedDate, "YYYY-MM").format("MM"),

@@ -1,2 +1,3 @@
 import Calendar from "./src/MonthlyCalendar/Calendar";
-export { Calendar };
+import TextProva from "./src/MonthlyCalendar/TextProva";
+export { Calendar, TextProva };

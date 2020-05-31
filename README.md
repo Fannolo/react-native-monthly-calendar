@@ -27,6 +27,28 @@ npm install
 npm run start
 ```
 
+## Props
+
+| Prop                        | Type      | Description                                                                                                              | Default props         |
+| --------------------------- | --------- | ------------------------------------------------------------------------------------------------------------------------ | --------------------- |
+| onDateChange                | Function  | Callback when a date is selected. Returns two values, month and year.                                                    | `(month, year) => {}` |
+| textColor                   | String    | Color of the text in the entire components. Can be overwritten by specific props.                                        | `#000`                |
+| backgroundColor             | String    | Color of the background in the entire components.                                                                        | `#fff`                |
+| selectedDate                | String    |                                                                                                                          |                       |
+| minDate                     | String    |                                                                                                                          |                       |
+| maxDate                     | String    | Calendar language according to the guidelines of [moment.js docs](https://momentjs.com/docs/ "Moment.js documentation"). | "en"                  |
+| locale                      | String    |                                                                                                                          |                       |
+| activeDateTextColor         | String    |                                                                                                                          |                       |
+| activeDateBackgroundColor   | String    |                                                                                                                          |                       |
+| selectedDateTextColor       | String    |                                                                                                                          |                       |
+| selectedDateBackgroundColor | String    |                                                                                                                          |                       |
+| inactiveDateTextColor       | String    |                                                                                                                          |                       |
+| inactiveDateBackgroundColor | String    |                                                                                                                          |                       |
+| openIconComponent           | Component |                                                                                                                          |                       |
+| closeIconComponent          | Component |                                                                                                                          |                       |
+| prevComponent               | Component |                                                                                                                          |                       |
+| nextComponent               | Component |                                                                                                                          |                       |
+
 ## Author
 
 👤 **fannolo**

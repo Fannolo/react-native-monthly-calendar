@@ -24,13 +24,13 @@ export default class CalendarBodyMonths extends Component {
       selectedMonth,
       selectedYear,
       currentYear,
+      textColor,
       selectedDateTextColor,
       selectedDateBackgroundColor,
       activeDateBackgroundColor,
       activeDateTextColor,
       inactiveDateTextColor,
       inactiveDateBackgroundColor,
-      locale,
     } = this.props;
 
     let currentMonth = moment().month(item).format("MM");
@@ -43,12 +43,12 @@ export default class CalendarBodyMonths extends Component {
           }
           enabled={true}
           text={item}
-          selectedDateTextColor={selectedDateTextColor || "#fff"}
-          selectedDateBackgroundColor={selectedDateBackgroundColor || "#000"}
-          activeDateBackgroundColor={activeDateBackgroundColor || "#fff"}
-          activeDateTextColor={activeDateTextColor || "#000"}
-          inactiveDateTextColor={inactiveDateTextColor || "#000"}
-          inactiveDateBackgroundColor={inactiveDateBackgroundColor || "#fff"}
+          selectedDateTextColor={selectedDateTextColor || textColor}
+          selectedDateBackgroundColor={selectedDateBackgroundColor}
+          activeDateBackgroundColor={activeDateBackgroundColor}
+          activeDateTextColor={activeDateTextColor || textColor}
+          inactiveDateTextColor={inactiveDateTextColor || textColor}
+          inactiveDateBackgroundColor={inactiveDateBackgroundColor}
         />
       );
     } else {
@@ -56,12 +56,12 @@ export default class CalendarBodyMonths extends Component {
         <CalendarMonth
           enabled={false}
           text={item}
-          selectedDateTextColor={selectedDateTextColor || "#fff"}
-          selectedDateBackgroundColor={selectedDateBackgroundColor || "#000"}
-          activeDateBackgroundColor={activeDateBackgroundColor || "#fff"}
-          activeDateTextColor={activeDateTextColor || "#000"}
-          inactiveDateTextColor={inactiveDateTextColor || "#000"}
-          inactiveDateBackgroundColor={inactiveDateBackgroundColor || "#fff"}
+          selectedDateTextColor={selectedDateTextColor || textColor}
+          selectedDateBackgroundColor={selectedDateBackgroundColor}
+          activeDateBackgroundColor={activeDateBackgroundColor}
+          activeDateTextColor={activeDateTextColor || textColor}
+          inactiveDateTextColor={inactiveDateTextColor || textColor}
+          inactiveDateBackgroundColor={inactiveDateBackgroundColor}
         />
       );
     }
@@ -74,3 +74,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
+
+CalendarBodyMonths.defaultProps = {
+  selectedDateBackgroundColor: "#fff",
+  activeDateBackgroundColor: "#fff",
+  inactiveDateBackgroundColor: "#fff",
+};

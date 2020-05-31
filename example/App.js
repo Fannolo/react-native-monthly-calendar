@@ -46,16 +46,16 @@ export default class App extends React.Component {
               <Calendar
                 onDateChange={this._onDateChange.bind(this)}
                 textColor={'#000'}
+                selectedDate={'2020-04'}
+                minDate={'2019-05'}
+                locale={'it'}
                 activeDateTextColor={'#000'}
                 activeDateBackgroundColor={'#fff'}
                 selectedDateTextColor={'#fff'}
-                selectedDateBackgroundColor={'#000'}
+                selectedDateBackgroundColor={'#f00'}
                 inactiveDateTextColor={'#ddd'}
                 inactiveDateBackgroundColor={'f00'}
                 backgroundColor={'#fff'}
-                selectedDate={'2020-04'}
-                minDate={'2019-05'}
-                locale={'es'}
                 openIconComponent={<Text>open</Text>}
                 closeIconComponent={<Text>close</Text>}
                 prevComponent={<Text>prev</Text>}

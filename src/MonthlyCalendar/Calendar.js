@@ -17,11 +17,7 @@ export default class Calendar extends Component {
     this.calendarHeader.close();
   }
 
-  componentDidUpdate(
-    prevProps: Readonly<P>,
-    prevState: Readonly<S>,
-    snapshot: SS
-  ) {
+  componentDidUpdate(prevProps, prevState, snapshot) {
     if (prevProps.selectedDate !== this.props.selectedDate) {
       this.setState({
         selectedMonth: moment(this.props.selectedDate, "YYYY-MM").format("MM"),
@@ -48,7 +44,7 @@ export default class Calendar extends Component {
       inactiveDateBackgroundColor,
     } = this.props;
 
-    moment.locale(locale || "it");
+    moment.locale(locale);
 
     return (
       <>
@@ -86,8 +82,8 @@ export default class Calendar extends Component {
             inactiveDateBackgroundColor={inactiveDateBackgroundColor}
             maxDate={this.props.maxDate}
             minDate={this.props.minDate}
-            prevComponent={prevComponent || <View />}
-            nextComponent={nextComponent || <View />}
+            prevComponent={prevComponent}
+            nextComponent={nextComponent}
             locale={locale}
           />
         )}
@@ -99,4 +95,8 @@ export default class Calendar extends Component {
 Calendar.defaultProps = {
   maxDate: moment().format("YYYY-MM"),
   minDate: moment().format("YYYY-MM"),
+  backgroundColor: "#fff",
+  prevComponent: <View />,
+  nextComponent: <View />,
+  locale: "en",
 };

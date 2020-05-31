@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { FlatList, StyleSheet } from "react-native";
 import CalendarMonth from "./CalendarMonth";
-import moment from "moment";
-import localization from "moment/locale/it";
+import moment from "moment/min/moment-with-locales";
 
 export default class CalendarBodyMonths extends Component {
   render() {
+    moment.locale(this.props.locale);
     return (
       <FlatList
         contentContainerStyle={styles.bodyContainer}
@@ -19,14 +19,22 @@ export default class CalendarBodyMonths extends Component {
   }
 
   _renderItem = ({ item, index }) => {
-    const { months, selectedMonth, selectedYear, currentYear } = this.props;
-    let currentMonth = moment()
-        .month(item)
-        .format("MM");
-    if (
-      months.item.months.includes(currentMonth)
-    ) {
+    const {
+      months,
+      selectedMonth,
+      selectedYear,
+      currentYear,
+      selectedDateTextColor,
+      selectedDateBackgroundColor,
+      activeDateBackgroundColor,
+      activeDateTextColor,
+      inactiveDateTextColor,
+      inactiveDateBackgroundColor,
+      locale,
+    } = this.props;
 
+    let currentMonth = moment().month(item).format("MM");
+    if (months.item.months.includes(currentMonth)) {
       return (
         <CalendarMonth
           onPress={() => this.props.onPress(currentMonth, currentYear)}
@@ -35,10 +43,27 @@ export default class CalendarBodyMonths extends Component {
           }
           enabled={true}
           text={item}
+          selectedDateTextColor={selectedDateTextColor || "#fff"}
+          selectedDateBackgroundColor={selectedDateBackgroundColor || "#000"}
+          activeDateBackgroundColor={activeDateBackgroundColor || "#fff"}
+          activeDateTextColor={activeDateTextColor || "#000"}
+          inactiveDateTextColor={inactiveDateTextColor || "#000"}
+          inactiveDateBackgroundColor={inactiveDateBackgroundColor || "#fff"}
         />
       );
     } else {
-      return <CalendarMonth enabled={false} text={item} />;
+      return (
+        <CalendarMonth
+          enabled={false}
+          text={item}
+          selectedDateTextColor={selectedDateTextColor || "#fff"}
+          selectedDateBackgroundColor={selectedDateBackgroundColor || "#000"}
+          activeDateBackgroundColor={activeDateBackgroundColor || "#fff"}
+          activeDateTextColor={activeDateTextColor || "#000"}
+          inactiveDateTextColor={inactiveDateTextColor || "#000"}
+          inactiveDateBackgroundColor={inactiveDateBackgroundColor || "#fff"}
+        />
+      );
     }
   };
 }

@@ -5,10 +5,25 @@ import { DimensionsUtils, Body } from "./Utils";
 export default class CalendarMonth extends Component {
   render() {
     const { container, text } = styles;
+    const {
+      selectedDateTextColor,
+      selectedDateBackgroundColor,
+      activeDateBackgroundColor,
+      activeDateTextColor,
+      inactiveDateTextColor,
+      inactiveDateBackgroundColor,
+    } = this.props;
+
     return (
       <TouchableOpacity
         style={[
-          { backgroundColor: this.props.active ? "#000" : null },
+          {
+            backgroundColor: this.props.active
+              ? selectedDateBackgroundColor
+              : this.props.enabled
+              ? activeDateBackgroundColor
+              : inactiveDateBackgroundColor,
+          },
           container,
         ]}
         disabled={!this.props.enabled}
@@ -16,7 +31,11 @@ export default class CalendarMonth extends Component {
       >
         <Body
           color={
-            this.props.active ? "#fff" : this.props.enabled ? "#000" : "#000"
+            this.props.active
+              ? selectedDateTextColor
+              : this.props.enabled
+              ? activeDateTextColor
+              : inactiveDateTextColor
           }
           style={text}
           bold={this.props.active || this.props.enabled ? true : false}

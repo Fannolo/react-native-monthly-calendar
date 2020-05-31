@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { View } from "react-native";
 import { CalendarHeader } from "./CalendarHeader";
 import CalendarBody from "./CalendarBody";
-import moment from "moment";
+// import moment from "moment";
+import moment from "moment/min/moment-with-locales";
 
 export default class Calendar extends Component {
   state = {
@@ -29,7 +31,25 @@ export default class Calendar extends Component {
   }
 
   render() {
-    const { textColor, backgroundColor, onDateChange } = this.props;
+    const {
+      textColor,
+      backgroundColor,
+      onDateChange,
+      locale,
+      closeIconComponent,
+      openIconComponent,
+      prevComponent,
+      nextComponent,
+      activeDateTextColor,
+      activeDateBackgroundColor,
+      selectedDateTextColor,
+      selectedDateBackgroundColor,
+      inactiveDateTextColor,
+      inactiveDateBackgroundColor,
+    } = this.props;
+
+    moment.locale(locale || "it");
+
     return (
       <>
         <CalendarHeader
@@ -44,6 +64,9 @@ export default class Calendar extends Component {
           onCloseCalendar={() => {
             this.setState({ showCalendar: false });
           }}
+          closeIconComponent={closeIconComponent || <View />}
+          openIconComponent={openIconComponent || <View />}
+          locale={locale}
         />
         {this.state.showCalendar && (
           <CalendarBody
@@ -55,8 +78,17 @@ export default class Calendar extends Component {
             selectedYear={this.state.selectedYear}
             backgroundColor={backgroundColor}
             textColor={textColor}
+            selectedDateTextColor={selectedDateTextColor}
+            selectedDateBackgroundColor={selectedDateBackgroundColor}
+            activeDateBackgroundColor={activeDateBackgroundColor}
+            activeDateTextColor={activeDateTextColor}
+            inactiveDateTextColor={inactiveDateTextColor}
+            inactiveDateBackgroundColor={inactiveDateBackgroundColor}
             maxDate={this.props.maxDate}
             minDate={this.props.minDate}
+            prevComponent={prevComponent || <View />}
+            nextComponent={nextComponent || <View />}
+            locale={locale}
           />
         )}
       </>

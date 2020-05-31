@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { DimensionsUtils, H9 } from "./Utils";
-import moment from "moment";
+import moment from "moment/min/moment-with-locales";
 
 export class CalendarHeader extends Component {
   state = {
@@ -9,10 +9,13 @@ export class CalendarHeader extends Component {
   };
 
   close() {
-    this.setState({ open: false });
+    this.setState({
+      open: false,
+    });
   }
-
   render() {
+    moment.locale(this.props.locale);
+
     const { container } = styles;
     const {
       backgroundColor,
@@ -21,11 +24,18 @@ export class CalendarHeader extends Component {
       textColor,
       onOpenCalendar,
       onCloseCalendar,
+      openIconComponent,
+      closeIconComponent,
     } = this.props;
     return (
       <TouchableOpacity
         onPress={() => {
-          this.setState({ open: !this.state.open }, () => onOpenCalendar());
+          this.setState(
+            {
+              open: !this.state.open,
+            },
+            () => onOpenCalendar()
+          );
         }}
         disabled={this.state.open}
         style={[
@@ -45,17 +55,27 @@ export class CalendarHeader extends Component {
         />
         <TouchableOpacity
           onPress={() => {
-            this.setState({ open: !this.state.open }, () => {
-              this.state.open ? onOpenCalendar() : onCloseCalendar();
-            });
+            this.setState(
+              {
+                open: !this.state.open,
+              },
+              () => {
+                this.state.open ? onOpenCalendar() : onCloseCalendar();
+              }
+            );
           }}
-          style={[{ backgroundColor: backgroundColor }]}
+          style={[
+            {
+              backgroundColor: backgroundColor,
+            },
+          ]}
         >
+          {this.state.open ? closeIconComponent : openIconComponent}
           {/* <CustomIcon
-            color={textColor}
-            name={this.state.open ? "delete_search" : "calendar"}
-            size={DimensionsUtils.getIconSize(24)}
-          /> */}
+                            color={textColor}
+                            name={this.state.open ? "delete_search" : "calendar"}
+                            size={DimensionsUtils.getIconSize(24)}
+                          /> */}
         </TouchableOpacity>
       </TouchableOpacity>
     );

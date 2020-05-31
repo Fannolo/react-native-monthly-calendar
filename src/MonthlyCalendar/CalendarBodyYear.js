@@ -21,6 +21,8 @@ export class CalendarBodyYear extends Component {
       backgroundColor,
       onLeftPress,
       onRightPress,
+      prevComponent,
+      nextComponent
     } = this.props;
     const isFirstYear = calendar[0]?.year === currentYear;
     const isLastYear = calendar[calendar.length - 1]?.year === currentYear;
@@ -29,6 +31,7 @@ export class CalendarBodyYear extends Component {
         <View style={[upperLine, { backgroundColor: upperLineColor }]} />
         <View style={container}>
           <TouchableOpacity disabled={isFirstYear} onPress={onLeftPress}>
+            {prevComponent}
             {/* <CustomIcon
               style={{ opacity: isFirstYear ? 0.5 : 1 }}
               color={textColor}
@@ -38,6 +41,7 @@ export class CalendarBodyYear extends Component {
           </TouchableOpacity>
           <Body text={currentYear} color={textColor} bold />
           <TouchableOpacity disabled={isLastYear} onPress={onRightPress}>
+            {nextComponent}
             {/* <CustomIcon
               style={{ opacity: isLastYear ? 0.5 : 1 }}
               color={textColor}

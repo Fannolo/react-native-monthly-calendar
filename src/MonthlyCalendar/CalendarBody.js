@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { View, StyleSheet, Dimensions, Platform } from "react-native";
 import { CalendarBodyYear } from "./CalendarBodyYear";
 import CalendarBodyMonths from "./CalendarBodyMonths";
-import moment from "moment";
+import moment from "moment/min/moment-with-locales";
 import Carousel from "react-native-snap-carousel";
 import { DimensionsUtils } from "./Utils";
 
@@ -15,10 +15,24 @@ export default class CalendarBody extends Component {
 
   render() {
     const { carouselContainer } = styles;
-    const { textColor, backgroundColor } = this.props;
+    const {
+      textColor,
+      backgroundColor,
+      prevComponent,
+      nextComponent,
+      locale,
+    } = this.props;
     const calendar = this._getAllDates();
     return (
-      <View style={[{ width: "100%", backgroundColor, marginTop: -1 }]}>
+      <View
+        style={[
+          {
+            width: "100%",
+            backgroundColor,
+            marginTop: -1,
+          },
+        ]}
+      >
         <CalendarBodyYear
           calendar={calendar}
           currentYear={this.state.currentYear}
@@ -30,6 +44,9 @@ export default class CalendarBody extends Component {
           }}
           textColor={textColor}
           backgroundColor={backgroundColor}
+          prevComponent={prevComponent}
+          nextComponent={nextComponent}
+          locale={locale}
         />
         <View style={carouselContainer}>
           <Carousel
@@ -37,7 +54,9 @@ export default class CalendarBody extends Component {
               .map((item) => item.year)
               .indexOf(this.props.selectedYear)}
             onSnapToItem={(index) => {
-              this.setState({ currentYear: calendar[index].year });
+              this.setState({
+                currentYear: calendar[index].year,
+              });
             }}
             scrollEnabled={Platform.OS === "ios"}
             ref={(ref) => (this.carousel = ref)}
@@ -64,6 +83,13 @@ export default class CalendarBody extends Component {
       selectedYear,
       selectedMonth,
       onDateChange,
+      activeDateBackgroundColor,
+      activeDateTextColor,
+      selectedDateTextColor,
+      selectedDateBackgroundColor,
+      inactiveDateTextColor,
+      inactiveDateBackgroundColor,
+      locale,
     } = this.props;
     return (
       <CalendarBodyMonths
@@ -75,6 +101,13 @@ export default class CalendarBody extends Component {
         months={item}
         data={item}
         onPress={onDateChange}
+        selectedDateTextColor={selectedDateTextColor}
+        selectedDateBackgroundColor={selectedDateBackgroundColor}
+        activeDateBackgroundColor={activeDateBackgroundColor}
+        activeDateTextColor={activeDateTextColor}
+        inactiveDateTextColor={inactiveDateTextColor}
+        inactiveDateBackgroundColor={inactiveDateBackgroundColor}
+        locale={locale}
       />
     );
   };
@@ -98,7 +131,10 @@ export default class CalendarBody extends Component {
       dateStart.add(1, "month");
     }
     for (const [key, value] of Object.entries(allDates)) {
-      allDatesFinal.push({ year: key, months: value });
+      allDatesFinal.push({
+        year: key,
+        months: value,
+      });
     }
     return allDatesFinal;
   };

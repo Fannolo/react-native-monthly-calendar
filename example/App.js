@@ -24,7 +24,7 @@ export default class App extends React.Component {
     alert('CHANGED ' + month + '/' + year);
   };
   render() {
-    return (
+    return (    
       <>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView
